@@ -18,10 +18,11 @@ class AppColors {
   static const Color orangeGelap = Color(0xFF8A4F32);
 }
 
-OutlineInputBorder _border(Color color,{double width=1.4}) => OutlineInputBorder(
-  borderRadius: BorderRadius.circular(14),
-  borderSide: BorderSide(color: color,width: width),
-);
+OutlineInputBorder _border(Color color, {double width = 1.4}) =>
+    OutlineInputBorder(
+      borderRadius: BorderRadius.circular(14),
+      borderSide: BorderSide(color: color, width: width),
+    );
 
 final ThemeData appTheme = ThemeData(
   useMaterial3: true,
@@ -41,7 +42,11 @@ final ThemeData appTheme = ThemeData(
     centerTitle: false,
     elevation: 0,
     scrolledUnderElevation: 0,
-    titleTextStyle: TextStyle(fontSize: 19,fontWeight: FontWeight.w700,color: AppColors.krem),
+    titleTextStyle: TextStyle(
+      fontSize: 19,
+      fontWeight: FontWeight.w700,
+      color: AppColors.krem,
+    ),
   ),
   cardTheme: CardThemeData(
     color: AppColors.putih,
@@ -58,35 +63,35 @@ final ThemeData appTheme = ThemeData(
       foregroundColor: AppColors.kremMuda,
       disabledBackgroundColor: AppColors.hijauSage,
       elevation: 2,
-      minimumSize: const Size(double.infinity,52),
-      textStyle: const TextStyle(fontSize:15,fontWeight:FontWeight.w700),
-      shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(14)),
+      minimumSize: const Size(double.infinity, 52),
+      textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
-    filled:true,
-    fillColor:AppColors.putih,
-    labelStyle:const TextStyle(color:AppColors.teksSekunder),
-    floatingLabelStyle:const TextStyle(color:AppColors.hijauTua),
-    hintStyle:const TextStyle(color:AppColors.teksSekunder),
-    border:_border(AppColors.garis),
-    enabledBorder:_border(AppColors.garis),
-    focusedBorder:_border(AppColors.hijauSage,width:2),
-    errorBorder:_border(AppColors.error),
-    focusedErrorBorder:_border(AppColors.error,width:2),
-    prefixIconColor:AppColors.hijauTua,
+    filled: true,
+    fillColor: AppColors.putih,
+    labelStyle: const TextStyle(color: AppColors.teksSekunder),
+    floatingLabelStyle: const TextStyle(color: AppColors.hijauTua),
+    hintStyle: const TextStyle(color: AppColors.teksSekunder),
+    border: _border(AppColors.garis),
+    enabledBorder: _border(AppColors.garis),
+    focusedBorder: _border(AppColors.hijauSage, width: 2),
+    errorBorder: _border(AppColors.error),
+    focusedErrorBorder: _border(AppColors.error, width: 2),
+    prefixIconColor: AppColors.hijauTua,
   ),
-  bottomNavigationBarTheme:const BottomNavigationBarThemeData(
-    backgroundColor:AppColors.putih,
-    selectedItemColor:AppColors.hijauTua,
-    unselectedItemColor:AppColors.teksSekunder,
-    type:BottomNavigationBarType.fixed,
-    showUnselectedLabels:true,
-    elevation:12,
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: AppColors.putih,
+    selectedItemColor: AppColors.hijauTua,
+    unselectedItemColor: AppColors.teksSekunder,
+    type: BottomNavigationBarType.fixed,
+    showUnselectedLabels: true,
+    elevation: 12,
   ),
 );
 
 class CalcMateText {
-  static const String appName='CalcMate';
-  static const String tagline='Hitung lebih mudah, pahami lebih jelas.';
+  static const String appName = 'CalcMate';
+  static const String tagline = 'Hitung lebih mudah, pahami lebih jelas.';
 }
