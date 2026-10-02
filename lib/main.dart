@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screen/login.dart';
 import 'theme/app_theme.dart';
-import 'screen/main_page.dart';
 
 void main() {
   runApp(const KuisApp());
@@ -16,7 +16,7 @@ class KuisApp extends StatelessWidget {
       title: 'Kuis Mobile',
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      home: const MainPage(),
+      home: const LoginPage(),
     );
   }
 }

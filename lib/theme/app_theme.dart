@@ -13,7 +13,7 @@ class AppColors {
 
 OutlineInputBorder _border(Color color, {double width = 1.5}) {
   return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(12),
+    borderRadius: BorderRadius.circular(14),
     borderSide: BorderSide(color: color, width: width),
   );
 }
@@ -32,11 +32,21 @@ final ThemeData appTheme = ThemeData(
     backgroundColor: AppColors.coklatTua,
     foregroundColor: AppColors.krem,
     centerTitle: true,
+    elevation: 0,
+    scrolledUnderElevation: 0,
+    titleTextStyle: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: AppColors.krem,
+      letterSpacing: 0.3,
+    ),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: AppColors.hijauTua,
       foregroundColor: AppColors.krem,
+      disabledBackgroundColor: AppColors.hijauSage,
+      elevation: 3,
       minimumSize: const Size(double.infinity, 52),
       textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
@@ -45,6 +55,7 @@ final ThemeData appTheme = ThemeData(
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
     fillColor: AppColors.putih,
+    floatingLabelStyle: const TextStyle(color: AppColors.hijauTua),
     border: _border(AppColors.hijauSage),
     enabledBorder: _border(AppColors.hijauSage),
     focusedBorder: _border(AppColors.hijauTua, width: 2),
@@ -57,5 +68,7 @@ final ThemeData appTheme = ThemeData(
     unselectedItemColor: Colors.grey,
     type: BottomNavigationBarType.fixed,
     showUnselectedLabels: true,
+    elevation: 12,
+    selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
   ),
 );

@@ -56,7 +56,12 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+# Tambahkan di pubspec.yaml (indentasi 2 spasi, sejajar dengan "uses-material-design")
+flutter:
+  uses-material-design: true
 
+  assets:
+    - assets/images/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

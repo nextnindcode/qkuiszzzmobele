@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
-import 'profile_page.dart';
+import 'home.dart';
+import 'profile.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -13,7 +13,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _index = 0;
 
-  final List<Widget> _pages = const [HomePage(), ProfilePage()];
+  final List<Widget> _pages = [HomePage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -34,5 +34,14 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
     );
+  }
+}
+
+class ProfilePage {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const ProfileScreen();
   }
 }
