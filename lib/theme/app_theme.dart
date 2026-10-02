@@ -15,6 +15,7 @@ class AppColors {
   static const Color teksSekunder = Color(0xFF7A706A);
   static const Color garis = Color(0xFFDCCFC1);
   static const Color error = Color(0xFFB84A42);
+  static const Color orangeGelap = Color(0xFF8A4F32);
 }
 
 OutlineInputBorder _border(Color color,{double width=1.4}) => OutlineInputBorder(
