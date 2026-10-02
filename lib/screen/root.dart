@@ -13,7 +13,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _index = 0;
 
-  final List<Widget> _pages = [HomePage(), ProfilePage()];
+  final List<Widget> _pages = [const HomePage(), const ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +34,5 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
     );
-  }
-}
-
-class ProfilePage {
-  const ProfilePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const ProfileScreen();
   }
 }

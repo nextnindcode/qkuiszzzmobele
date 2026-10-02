@@ -191,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           const SizedBox(height: 14),
                           Text(
-                            'Demo: NIM ${ProfileData.nim} / password ${ProfileData.psw}',
+                            'Demo: NIM ${ProfileData.nim} / password ${ProfileData.password}',
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                               fontSize: 12,
