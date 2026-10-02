@@ -5,11 +5,17 @@ import '../theme/app_theme.dart';
 class ResultItem {
   final String label;
   final String value;
+  final String? formula;
   final bool highlight;
-  const ResultItem(this.label, this.value, {this.highlight = false});
+
+  const ResultItem(
+    this.label,
+    this.value, {
+    this.formula,
+    this.highlight = false,
+  });
 }
 
-// Kartu hasil perhitungan (label di kiri, nilai di kanan)
 class ResultCard extends StatelessWidget {
   final String title;
   final List<ResultItem> items;
@@ -25,118 +31,74 @@ class ResultCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(18),
+      padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: AppColors.putih,
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.hijauSage.withValues(alpha: 0.5)),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppColors.hijauSage.withValues(alpha: 0.35)),
         boxShadow: [
           BoxShadow(
             color: AppColors.coklatTua.withValues(alpha: 0.12),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
+            blurRadius: 7,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Icon(icon, color: AppColors.hijauTua),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.coklatTua,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const Divider(height: 22),
-          ...items.map(_row),
-        ],
-      ),
-    );
-  }
-
-  Widget _row(ResultItem item) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 8),
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-      decoration: BoxDecoration(
-        color: item.highlight ? AppColors.krem : null,
-        borderRadius: BorderRadius.circular(12),
-        border: item.highlight
-            ? Border.all(color: AppColors.orangeTerang)
-            : null,
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              item.label,
-              style: const TextStyle(color: Colors.black87, fontSize: 14),
-            ),
-          ),
-          const SizedBox(width: 8),
-          Flexible(
-            child: Text(
-              item.value,
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: item.highlight ? 17 : 15,
-                color: item.highlight
-                    ? AppColors.orangeGelap
-                    : AppColors.coklatTua,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class FormulaBox extends StatelessWidget {
-  final List<String> lines;
-  const FormulaBox({super.key, required this.lines});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.hijauTua,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Rumus yang dipakai',
-            style: TextStyle(
-              color: AppColors.krem,
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 15,
               fontWeight: FontWeight.bold,
+              color: Colors.blue,
             ),
           ),
-          const SizedBox(height: 6),
-          ...lines.map(
-            (l) => Padding(
-              padding: const EdgeInsets.only(top: 2),
-              child: Text(
-                l,
-                style: const TextStyle(
-                  color: AppColors.krem,
-                  fontSize: 12.5,
-                  height: 1.4,
-                ),
+
+          const Divider(height: 20),
+
+          ...items.map(_buildItem),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildItem(ResultItem item) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            item.label,
+            style: const TextStyle(
+              fontSize: 12.5,
+              fontWeight: FontWeight.w600,
+              color: Colors.black87,
+            ),
+          ),
+
+          const SizedBox(height: 2),
+
+          if (item.formula != null)
+            Text(
+              'Rumus: ${item.formula}',
+              style: const TextStyle(
+                fontSize: 11,
+                color: Colors.black54,
+                height: 1.35,
               ),
+            ),
+
+          const SizedBox(height: 1),
+
+          Text(
+            'Hasil: ${item.value}',
+            style: TextStyle(
+              fontSize: 11.5,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
             ),
           ),
         ],

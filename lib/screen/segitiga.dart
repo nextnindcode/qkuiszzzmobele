@@ -44,7 +44,22 @@ class _SegitigaPageState extends State<SegitigaPage> {
   void _gantiJenis(JenisSegitiga j) {
     setState(() {
       _jenis = j;
-      _hasil = null;
+      _hasil = [
+        ResultItem(
+          'Tinggi Segitiga',
+          '– cm',
+          formula: '√(sisi² - (½ × alas)²)',
+        ),
+
+        ResultItem(
+          'Luas Segitiga',
+          '– cm²',
+          formula: '½ × alas × tinggi',
+          highlight: true,
+        ),
+
+        ResultItem('Keliling Segitiga', '– cm', formula: 'alas + sisi + sisi'),
+      ];
       _c1.clear();
       _c2.clear();
     });
@@ -152,6 +167,26 @@ class _SegitigaPageState extends State<SegitigaPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              const Text(
+                'Kalkulator Segitiga',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Masukkan nilai alas dan sisi miring segitiga '
+                'untuk menghitung tinggi, luas, dan keliling segitiga.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12.5,
+                  color: Colors.black54,
+                  height: 1.45,
+                ),
+              ),
               const Text('Pilih jenis segitiga:'),
               const SizedBox(height: 8),
               Wrap(
