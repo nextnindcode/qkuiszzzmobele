@@ -4,16 +4,16 @@ import 'screen/login.dart';
 import 'theme/app_theme.dart';
 
 void main() {
-  runApp(const KuisApp());
+  runApp(const CalcMateApp());
 }
 
-class KuisApp extends StatelessWidget {
-  const KuisApp({super.key});
+class CalcMateApp extends StatelessWidget {
+  const CalcMateApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Kuis Mobile',
+      title: CalcMateText.appName,
       debugShowCheckedModeBanner: false,
       theme: appTheme,
       home: const LoginPage(),
