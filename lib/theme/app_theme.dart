@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// Palet warna yang dipakai di seluruh aplikasi
 class AppColors {
   static const Color coklatTua = Color(0xFF7A3F0D); // appbar & judul
   static const Color orangeTerang = Color(0xFFCD7E07); // aksen
@@ -19,7 +18,6 @@ OutlineInputBorder _border(Color color, {double width = 1.5}) {
   );
 }
 
-// Tema global supaya semua halaman konsisten
 final ThemeData appTheme = ThemeData(
   useMaterial3: true,
   scaffoldBackgroundColor: AppColors.krem,

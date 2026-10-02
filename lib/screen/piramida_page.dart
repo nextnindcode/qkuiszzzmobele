@@ -6,7 +6,6 @@ import '../utils/helpers.dart';
 import '../widget/input_field.dart';
 import '../widget/result_card.dart';
 
-// Piramida alas persegi: volume & keliling
 class PiramidaPage extends StatefulWidget {
   const PiramidaPage({super.key});
 

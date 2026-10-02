@@ -5,7 +5,6 @@ import '../theme/app_theme.dart';
 import '../utils/helpers.dart';
 import '../widget/result_card.dart';
 
-// Cek hari: nomor 1-7 -> Senin sampai Minggu
 class CekHariPage extends StatefulWidget {
   const CekHariPage({super.key});
 
@@ -48,7 +47,9 @@ class _CekHariPageState extends State<CekHariPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Text('Masukkan nomor 1 sampai 7 (1 = Senin ... 7 = Minggu).'),
+              const Text(
+                'Masukkan nomor 1 sampai 7 (1 = Senin ... 7 = Minggu).',
+              ),
               const SizedBox(height: 16),
               TextFormField(
                 controller: _controller,
@@ -56,8 +57,10 @@ class _CekHariPageState extends State<CekHariPage> {
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: const InputDecoration(
                   labelText: 'Nomor hari',
-                  prefixIcon:
-                      Icon(Icons.tag_rounded, color: AppColors.hijauTua),
+                  prefixIcon: Icon(
+                    Icons.tag_rounded,
+                    color: AppColors.hijauTua,
+                  ),
                 ),
                 validator: _validasi,
                 onFieldSubmitted: (_) => _cek(),
@@ -74,8 +77,11 @@ class _CekHariPageState extends State<CekHariPage> {
                 icon: Icons.list_alt_rounded,
                 items: [
                   for (var i = 0; i < namaHari.length; i++)
-                    ResultItem('${i + 1}', namaHari[i],
-                        highlight: _nomor == i + 1),
+                    ResultItem(
+                      '${i + 1}',
+                      namaHari[i],
+                      highlight: _nomor == i + 1,
+                    ),
                 ],
               ),
             ],
@@ -94,8 +100,10 @@ class _CekHariPageState extends State<CekHariPage> {
       ),
       child: Column(
         children: [
-          Text('Nomor $nomor',
-              style: const TextStyle(color: AppColors.krem, fontSize: 14)),
+          Text(
+            'Nomor $nomor',
+            style: const TextStyle(color: AppColors.krem, fontSize: 14),
+          ),
           const SizedBox(height: 6),
           Text(
             namaHari[nomor - 1],

@@ -4,7 +4,6 @@ import '../data/profile_data.dart';
 import '../theme/app_theme.dart';
 import '../utils/helpers.dart';
 
-// Profile: nama, NIM, tempat & tanggal lahir, hobi, dan foto
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -31,17 +30,22 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(height: 20),
           _info(Icons.badge_rounded, 'Nama', ProfileData.nama),
           _info(Icons.numbers_rounded, 'NIM', ProfileData.nim),
-          _info(Icons.location_on_rounded, 'Tempat Lahir',
-              ProfileData.tempatLahir),
-          _info(Icons.cake_rounded, 'Tanggal Lahir',
-              tanggalIndo(ProfileData.tanggalLahir)),
+          _info(
+            Icons.location_on_rounded,
+            'Tempat Lahir',
+            ProfileData.tempatLahir,
+          ),
+          _info(
+            Icons.cake_rounded,
+            'Tanggal Lahir',
+            tanggalIndo(ProfileData.tanggalLahir),
+          ),
           _hobi(),
         ],
       ),
     );
   }
 
-  // Foto dari asset; kalau file belum ada tampil ikon default
   Widget _foto() {
     return Container(
       width: 140,
@@ -78,8 +82,10 @@ class ProfilePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(label,
-                    style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                Text(
+                  label,
+                  style: const TextStyle(fontSize: 12, color: Colors.black54),
+                ),
                 const SizedBox(height: 2),
                 Text(
                   value,
@@ -108,8 +114,10 @@ class ProfilePage extends StatelessWidget {
             children: [
               Icon(Icons.favorite_rounded, color: AppColors.hijauTua),
               SizedBox(width: 14),
-              Text('Hobi',
-                  style: TextStyle(fontSize: 12, color: Colors.black54)),
+              Text(
+                'Hobi',
+                style: TextStyle(fontSize: 12, color: Colors.black54),
+              ),
             ],
           ),
           const SizedBox(height: 10),

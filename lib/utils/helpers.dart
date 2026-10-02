@@ -1,10 +1,26 @@
 const List<String> namaHari = [
-  'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu',
+  'Senin',
+  'Selasa',
+  'Rabu',
+  'Kamis',
+  'Jumat',
+  'Sabtu',
+  'Minggu',
 ];
 
 const List<String> namaBulan = [
-  'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
-  'Agustus', 'September', 'Oktober', 'November', 'Desember',
+  'Januari',
+  'Februari',
+  'Maret',
+  'April',
+  'Mei',
+  'Juni',
+  'Juli',
+  'Agustus',
+  'September',
+  'Oktober',
+  'November',
+  'Desember',
 ];
 
 String tanggalIndo(DateTime d) =>
@@ -15,11 +31,9 @@ String tanggalLengkap(DateTime d) =>
 
 String dua(int n) => n.toString().padLeft(2, '0');
 
-// Terima angka dengan koma atau titik desimal
 double? parseNum(String? t) =>
     double.tryParse((t ?? '').trim().replaceAll(',', '.'));
 
-// Format angka gaya Indonesia: 1.234,56 (nol di belakang koma dibuang)
 String fmt(double v, {int digits = 2}) {
   if (v.isNaN || v.isInfinite) return '-';
   var s = v.abs().toStringAsFixed(digits);
@@ -38,7 +52,6 @@ String fmt(double v, {int digits = 2}) {
   return '${negatif ? '-' : ''}$buf$desimal';
 }
 
-// Validator: wajib diisi, harus angka, harus > 0
 String? validasiPositif(String? v) {
   if (v == null || v.trim().isEmpty) return 'Wajib diisi';
   final n = parseNum(v);

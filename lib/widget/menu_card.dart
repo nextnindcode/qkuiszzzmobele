@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../theme/app_theme.dart';
 
-// Satu kartu menu di halaman Home
 class MenuCard extends StatelessWidget {
   final IconData icon;
   final String title;
@@ -70,8 +69,10 @@ class MenuCard extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(Icons.chevron_right_rounded,
-                color: AppColors.orangeTerang),
+            const Icon(
+              Icons.chevron_right_rounded,
+              color: AppColors.orangeTerang,
+            ),
           ],
         ),
       ),

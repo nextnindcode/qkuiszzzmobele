@@ -9,7 +9,6 @@ import '../widget/result_card.dart';
 
 enum JenisSegitiga { samaKaki, samaSisi, sikuSiku }
 
-// Segitiga: luas & keliling untuk sama kaki, sama sisi, dan siku-siku
 class SegitigaPage extends StatefulWidget {
   const SegitigaPage({super.key});
 

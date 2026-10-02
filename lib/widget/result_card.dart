@@ -71,8 +71,9 @@ class ResultCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: item.highlight ? AppColors.krem : null,
         borderRadius: BorderRadius.circular(12),
-        border:
-            item.highlight ? Border.all(color: AppColors.orangeTerang) : null,
+        border: item.highlight
+            ? Border.all(color: AppColors.orangeTerang)
+            : null,
       ),
       child: Row(
         children: [
@@ -90,8 +91,9 @@ class ResultCard extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: item.highlight ? 17 : 15,
-                color:
-                    item.highlight ? AppColors.orangeGelap : AppColors.coklatTua,
+                color: item.highlight
+                    ? AppColors.orangeGelap
+                    : AppColors.coklatTua,
               ),
             ),
           ),
@@ -101,7 +103,6 @@ class ResultCard extends StatelessWidget {
   }
 }
 
-// Kotak rumus (hijau) di bawah form
 class FormulaBox extends StatelessWidget {
   final List<String> lines;
   const FormulaBox({super.key, required this.lines});
@@ -119,7 +120,10 @@ class FormulaBox extends StatelessWidget {
         children: [
           const Text(
             'Rumus yang dipakai',
-            style: TextStyle(color: AppColors.krem, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              color: AppColors.krem,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 6),
           ...lines.map(

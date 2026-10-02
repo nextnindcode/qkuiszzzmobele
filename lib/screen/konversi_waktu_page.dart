@@ -5,7 +5,6 @@ import '../utils/helpers.dart';
 import '../widget/input_field.dart';
 import '../widget/result_card.dart';
 
-// Konversi waktu ke Indonesia (WIB/WITA/WIT), Malaysia, dan Kanada
 class KonversiWaktuPage extends StatefulWidget {
   const KonversiWaktuPage({super.key});
 

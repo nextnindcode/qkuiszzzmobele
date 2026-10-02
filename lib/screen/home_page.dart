@@ -7,7 +7,6 @@ import 'konversi_waktu_page.dart';
 import 'piramida_page.dart';
 import 'segitiga_page.dart';
 
-// Home: 4 menu utama
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 

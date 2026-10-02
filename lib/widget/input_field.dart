@@ -5,7 +5,6 @@ import '../data/zona_waktu.dart';
 import '../theme/app_theme.dart';
 import '../utils/helpers.dart';
 
-// Kolom input angka (boleh desimal)
 class NumberField extends StatelessWidget {
   final TextEditingController controller;
   final String label;
@@ -35,7 +34,6 @@ class NumberField extends StatelessWidget {
   }
 }
 
-// Dropdown zona waktu
 class ZonaDropdown extends StatelessWidget {
   final String label;
   final Zona value;
@@ -73,7 +71,6 @@ class ZonaDropdown extends StatelessWidget {
   }
 }
 
-// Tile untuk memilih tanggal / jam (membuka picker saat ditekan)
 class PickerTile extends StatelessWidget {
   final String label;
   final String value;
